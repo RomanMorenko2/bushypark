@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Chat - Bushy Park Farm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/photo_6014618128140143610_x.jpg" alt="" class="logo-img" />
+        <span>Bushy Park Farm</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="chat.html" class="active">Chat</a></li>
+        </ul>
+      </nav>
+
+      <a href="join.html" class="btn btn-primary btn-pill">Join</a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-header page-header-photo chat-header">
+      <div class="container">
+        <h1 class="serif-title">Community Chat</h1>
+        <p>Create local servers, switch channel types, and keep the session's conversation state in your browser.</p>
+      </div>
+    </section>
+
+    <section class="section chat-section">
+      <div class="doodle-layer" aria-hidden="true">
+        <span class="doodle d1"></span>
+        <span class="doodle d2"></span>
+        <span class="doodle d3"></span>
+        <span class="doodle d4"></span>
+        <span class="doodle d5"></span>
+      </div>
+      <div class="container">
+        <div id="chat-app" class="chat-app" aria-live="polite">
+          <aside class="chat-sidebar" aria-label="Servers and channels">
+            <div class="chat-panel compact">
+              <h2 class="form-title">Current User</h2>
+              <div class="current-user-card">
+                <div class="message-avatar">SA</div>
+                <div>
+                  <strong>Sofia Admin</strong>
+                  <small>admin</small>
+                </div>
+              </div>
+              <p id="chat-user-note" class="form-message">Mocked local user. No login required.</p>
+            </div>
+
+            <div class="chat-panel">
+              <div class="chat-panel-head">
+                <h2 class="form-title">Servers</h2>
+              </div>
+              <form id="server-form" class="stack-form">
+                <input id="server-name" type="text" maxlength="50" placeholder="Server name" aria-label="New server name" required />
+                <textarea id="server-description" rows="2" maxlength="140" placeholder="Short description" aria-label="Server description"></textarea>
+                <button class="btn-small" type="submit">Create Server</button>
+              </form>
+              <div id="server-list" class="chat-list"></div>
+            </div>
+
+            <div class="chat-panel">
+              <div class="chat-panel-head">
+                <h2 class="form-title">Channels</h2>
+              </div>
+              <form id="channel-form" class="stack-form">
+                <input id="channel-name" type="text" maxlength="40" placeholder="New channel" aria-label="New channel name" required />
+                <select id="channel-type" aria-label="Channel type">
+                  <option value="chat">Chat</option>
+                  <option value="announcements">Announcements</option>
+                  <option value="tasks">Tasks</option>
+                  <option value="questions">Questions</option>
+                </select>
+                <button class="btn-small" type="submit">Add Channel</button>
+              </form>
+              <div id="channel-list" class="chat-list"></div>
+            </div>
+          </aside>
+
+          <section class="chat-main" aria-label="Messages">
+            <div class="chat-room-head">
+              <div>
+                <p id="chat-server-title" class="chat-eyebrow">No server selected</p>
+                <p id="chat-server-description" class="chat-server-id"></p>
+                <h2 id="chat-channel-title">Choose a channel</h2>
+              </div>
+              <span id="chat-role" class="role-badge">Member</span>
+            </div>
+
+            <div id="messages-list" class="messages-list"></div>
+
+            <form id="message-form" class="message-form">
+              <div id="task-fields" class="task-fields" hidden>
+                <input id="task-title" type="text" maxlength="80" placeholder="Task title" aria-label="Task title" />
+                <select id="task-status" aria-label="Task status">
+                  <option value="todo">To do</option>
+                  <option value="doing">Doing</option>
+                  <option value="done">Done</option>
+                </select>
+              </div>
+              <input id="message-content" type="text" maxlength="1000" placeholder="Message the channel..." aria-label="Message content" required />
+              <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+            <p id="chat-status" class="form-message"></p>
+          </section>
+
+          <aside class="chat-members chat-panel" aria-label="Server members">
+            <h2 class="form-title">Members</h2>
+            <div id="member-list" class="member-list"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="images/photo_6014618128140143610_x.jpg" alt="" class="logo-img" />
+          <span>Bushy Park Farm</span>
+        </a>
+        <p>A community-owned initiative in Terenure, Ireland.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="calendar.html">Events</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="chat.html">Chat</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:hello@bushyparkfarm.ie">hello@bushyparkfarm.ie</a></p>
+        <div class="footer-map">
+          <iframe
+            title="Bushy Park Farm map"
+            src="https://www.google.com/maps?q=Bushypark,%20Co.%20Cork&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 Bushy Park Farm</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farm Visit Calendar — Bushy Park Farm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/photo_6014618128140143610_x.jpg" alt="" class="logo-img" />
+        <span>Bushy Park Farm</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="calendar.html" class="active">Calendar</a></li>
+          <li><a href="chat.html">Chat</a></li>
+        </ul>
+      </nav>
+
+      <a href="join.html" class="btn btn-primary btn-pill">Join</a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-header page-header-photo calendar-header">
+      <div class="container">
+        <h1 class="serif-title">Farm Visit Calendar</h1>
+        <p>Pick a day, assign who is responsible for visiting the farm, and keep the harvest moving.</p>
+      </div>
+    </section>
+
+    <section class="section page-decor">
+      <div class="doodle-layer" aria-hidden="true">
+        <span class="doodle d1"></span>
+        <span class="doodle d2"></span>
+        <span class="doodle d3"></span>
+        <span class="doodle d4"></span>
+        <span class="doodle d5"></span>
+      </div>
+      <div class="container">
+        <div class="calendar-toolbar">
+          <button id="cal-prev" class="btn btn-outline-dark" aria-label="Previous month">&lsaquo;</button>
+          <h2 id="cal-title" class="cal-title">Month Year</h2>
+          <button id="cal-next" class="btn btn-outline-dark" aria-label="Next month">&rsaquo;</button>
+          <button id="cal-today" class="btn btn-primary">Today</button>
+        </div>
+
+        <div class="calendar" role="grid" aria-labelledby="cal-title">
+          <div class="cal-weekdays" role="row">
+            <div role="columnheader">Mon</div>
+            <div role="columnheader">Tue</div>
+            <div role="columnheader">Wed</div>
+            <div role="columnheader">Thu</div>
+            <div role="columnheader">Fri</div>
+            <div role="columnheader">Sat</div>
+            <div role="columnheader">Sun</div>
+          </div>
+          <div id="cal-grid" class="cal-grid" role="rowgroup"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Assign visit modal -->
+  <div id="assign-modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 id="modal-title">Assign Farm Visit</h2>
+      <p id="modal-date" class="modal-date"></p>
+      <form id="assign-form">
+        <div class="field">
+          <label for="assignee-name">Person responsible</label>
+          <input id="assignee-name" type="text" required maxlength="60" placeholder="e.g. Sofia" />
+        </div>
+        <div class="field">
+          <label for="assignee-note">Note <span class="hint">(optional)</span></label>
+          <input id="assignee-note" type="text" maxlength="80" placeholder="e.g. Morning harvest" />
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" id="remove-assignment" class="btn btn-outline-dark" hidden>Remove</button>
+          <button type="button" class="btn btn-outline-dark" data-close>Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="images/photo_6014618128140143610_x.jpg" alt="" class="logo-img" />
+          <span>Bushy Park Farm</span>
+        </a>
+        <p>A community-owned initiative in Terenure, Ireland.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#community">Community</a></li>
+          <li><a href="calendar.html">Events</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="chat.html">Chat</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:hello@bushyparkfarm.ie">hello@bushyparkfarm.ie</a></p>
+        <div class="footer-map">
+          <iframe
+            title="Bushy Park Farm map"
+            src="https://www.google.com/maps?q=Bushypark,%20Co.%20Cork&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 Bushy Park Farm</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

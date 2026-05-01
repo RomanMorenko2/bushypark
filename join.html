@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join — Bushy Park Farm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/photo_6014618128140143610_x.jpg" alt="" class="logo-img" />
+        <span>Bushy Park Farm</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="chat.html">Chat</a></li>
+          <li><a href="join.html" class="active">Join</a></li>
+        </ul>
+      </nav>
+
+      <a href="join.html" class="btn btn-primary btn-pill">Join</a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero join-hero">
+      <img class="hero-bg-img"
+           src="images/photo_6012366328326458613_y.jpg"
+           alt="" aria-hidden="true" />
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content centered">
+        <h1>Join Bushy Park Farm</h1>
+        <p>Become a member-owner and be part of a community growing fresh, local food together.</p>
+        <div class="hero-actions">
+          <a href="#application" class="btn btn-primary">Complete Application</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW MEMBERSHIP WORKS -->
+    <section class="section section-membership">
+      <div class="doodle-layer" aria-hidden="true">
+        <span class="doodle d1"></span>
+        <span class="doodle d2"></span>
+        <span class="doodle d3"></span>
+        <span class="doodle d4"></span>
+        <span class="doodle d5"></span>
+      </div>
+      <div class="container">
+        <h2 class="section-title">How Membership Works</h2>
+        <p class="section-subtitle">Three simple steps to become a member-owner</p>
+
+        <div class="numbered-cards">
+          <article class="numbered-card">
+            <span class="number-circle">1</span>
+            <h3>Buy a One-Time Share</h3>
+            <p>Purchase your membership share to become a co-owner of the farm.</p>
+          </article>
+
+          <article class="numbered-card">
+            <span class="number-circle">2</span>
+            <h3>Pay Weekly</h3>
+            <p>Contribute weekly payments during the growing season for ongoing operations.</p>
+          </article>
+
+          <article class="numbered-card">
+            <span class="number-circle">3</span>
+            <h3>Participate Together</h3>
+            <p>Join flexible community farm days and harvest fresh produce.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLICATION -->
+    <section class="section section-application" id="application">
+      <div class="doodle-layer" aria-hidden="true">
+        <span class="doodle d1"></span>
+        <span class="doodle d2"></span>
+        <span class="doodle d3"></span>
+        <span class="doodle d4"></span>
+        <span class="doodle d5"></span>
+      </div>
+      <div class="container">
+        <h2 class="section-title">Membership Application</h2>
+        <p class="section-subtitle">Complete the form below to join our community</p>
+
+        <form id="join-form" class="join-form" novalidate>
+          <fieldset class="form-section">
+            <legend>Personal Information</legend>
+
+            <div class="field">
+              <label for="full-name">Full Name</label>
+              <input id="full-name" name="fullName" type="text" required
+                     placeholder="Your full name" autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required
+                     placeholder="you@example.com" autocomplete="email" />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone" type="tel" required
+                     placeholder="+353 ..." autocomplete="tel" />
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Choose Your Box</legend>
+
+            <div class="radio-cards">
+              <label class="radio-card">
+                <input type="radio" name="boxSize" value="small" required />
+                <div class="radio-card-body">
+                  <span class="radio-card-mark" aria-hidden="true"></span>
+                  <h3>Small Box</h3>
+                  <p>Perfect for 1–2 people. Fresh seasonal vegetables weekly.</p>
+                </div>
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="boxSize" value="large" required />
+                <div class="radio-card-body">
+                  <span class="radio-card-mark" aria-hidden="true"></span>
+                  <h3>Large Box</h3>
+                  <p>Perfect for families of 3–5. Abundant seasonal produce weekly.</p>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Agreement</legend>
+
+            <label class="check">
+              <input type="checkbox" name="agreeCommunity" required />
+              <span>I understand this is a community-supported farm.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="agreeSeason" required />
+              <span>I agree to seasonal participation.</span>
+            </label>
+          </fieldset>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-large">Submit Application</button>
+            <p class="form-note">* All fields are required</p>
+            <p id="join-form-message" class="form-message" role="status"></p>
+          </div>
+        </form>
+
+        <div id="join-success" class="join-success" hidden>
+          <h3>Application Received!</h3>
+          <p>Thank you for applying to Bushy Park Farm. We'll be in touch shortly with the next steps.</p>
+          <button type="button" id="join-reset" class="btn btn-outline-dark">Submit Another Application</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="images/photo_6014618128140143610_x.jpg" alt="" class="logo-img" />
+          <span>Bushy Park Farm</span>
+        </a>
+        <p>A community-owned initiative in Terenure, Ireland.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#community">Community</a></li>
+          <li><a href="calendar.html">Events</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="chat.html">Chat</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:hello@bushyparkfarm.ie">hello@bushyparkfarm.ie</a></p>
+        <div class="footer-map">
+          <iframe
+            title="Bushy Park Farm map"
+            src="https://www.google.com/maps?q=Bushypark,%20Co.%20Cork&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 Bushy Park Farm</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

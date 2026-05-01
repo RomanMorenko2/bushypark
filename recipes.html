@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Recipes — Bushy Park Farm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/photo_6014618128140143610_x.jpg" alt="" class="logo-img" />
+        <span>Bushy Park Farm</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html" class="active">Recipes</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="chat.html">Chat</a></li>
+        </ul>
+      </nav>
+
+      <a href="join.html" class="btn btn-primary btn-pill">Join</a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-header page-header-photo recipes-header">
+      <div class="container">
+        <h1 class="serif-title">Community Recipes</h1>
+        <p>Share what you cook with your weekly food box. Add your favourite recipes and discover what others are making with the harvest.</p>
+      </div>
+    </section>
+
+    <section class="section page-decor">
+      <div class="doodle-layer" aria-hidden="true">
+        <span class="doodle d1"></span>
+        <span class="doodle d2"></span>
+        <span class="doodle d3"></span>
+        <span class="doodle d4"></span>
+        <span class="doodle d5"></span>
+      </div>
+      <div class="container recipes-layout">
+        <aside class="recipe-form-wrap">
+          <h2 class="form-title">Add a Recipe</h2>
+          <form id="recipe-form" class="recipe-form" novalidate>
+            <div class="field">
+              <label for="r-title">Title</label>
+              <input id="r-title" name="title" type="text" required maxlength="80" placeholder="e.g. Roasted Root Vegetables" />
+            </div>
+
+            <div class="field">
+              <label for="r-image">Image URL <span class="hint">(optional)</span></label>
+              <input id="r-image" name="image" type="url" placeholder="https://..." />
+            </div>
+
+            <div class="field">
+              <label for="r-ingredients">Ingredients <span class="hint">(one per line, or comma-separated)</span></label>
+              <textarea id="r-ingredients" name="ingredients" rows="5" required placeholder="2 carrots&#10;1 parsnip&#10;Olive oil"></textarea>
+            </div>
+
+            <div class="field">
+              <label for="r-description">Description</label>
+              <textarea id="r-description" name="description" rows="4" required placeholder="How to prepare and serve..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Save Recipe</button>
+              <button type="reset" class="btn btn-outline-dark">Clear</button>
+            </div>
+
+            <p id="form-message" class="form-message" role="status"></p>
+          </form>
+        </aside>
+
+        <div class="recipes-list-wrap">
+          <div class="list-header">
+            <h2 class="form-title">Shared Recipes <span id="recipe-count" class="count">(0)</span></h2>
+            <input id="recipe-search" type="search" placeholder="Search recipes..." aria-label="Search recipes" />
+          </div>
+
+          <div id="recipes-list" class="recipes-grid" aria-live="polite"></div>
+
+          <p id="empty-state" class="empty-state" hidden>
+            No recipes yet. Be the first to share one!
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="images/photo_6014618128140143610_x.jpg" alt="" class="logo-img" />
+          <span>Bushy Park Farm</span>
+        </a>
+        <p>A community-owned initiative in Terenure, Ireland.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#community">Community</a></li>
+          <li><a href="calendar.html">Events</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="chat.html">Chat</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:hello@bushyparkfarm.ie">hello@bushyparkfarm.ie</a></p>
+        <div class="footer-map">
+          <iframe
+            title="Bushy Park Farm map"
+            src="https://www.google.com/maps?q=Bushypark,%20Co.%20Cork&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 Bushy Park Farm</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
